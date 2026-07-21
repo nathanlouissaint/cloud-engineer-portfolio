@@ -137,14 +137,15 @@ export default function Experience() {
         </div>
 
         <div className="mt-24 space-y-2">
-          {journey.map((step) => (
-            <ExperienceTimeline
-              key={step.title}
-              title={step.title}
-              summary={step.summary}
-              details={step.details}
-              tools={step.tools}
-              lesson={step.lesson}
+          {journey.map((step, index) => (
+           <ExperienceTimeline
+            key={step.title}
+            index={index + 1}
+            title={step.title}
+            summary={step.summary}
+            details={step.details}
+            tools={step.tools}
+            lesson={step.lesson}
             />
           ))}
         </div>
