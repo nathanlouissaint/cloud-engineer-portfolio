@@ -33,7 +33,7 @@ export default function Hero({ isScrolled = false }: HeroProps) {
         {/* Left Side */}
         <div className="max-w-3xl">
           <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
-            Software Engineer • Cloud Engineer
+           Full-Stack • Cloud Engineer
           </span>
 
           <h1 className="mt-8 text-5xl font-bold leading-tight tracking-tight md:text-7xl">
@@ -43,10 +43,10 @@ export default function Hero({ isScrolled = false }: HeroProps) {
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-            I build enterprise-grade cloud applications, scalable backend
-            systems, and modern SaaS products using AWS, React,
-            TypeScript, Node.js, PostgreSQL, Docker and Terraform.
-          </p>
+           I build software that solves infrastructure problems. From full-stack web
+           applications to cloud architecture, I enjoy turning complex systems into
+           products that are reliable, scalable, and easy to use.
+           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
