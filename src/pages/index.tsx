@@ -1,9 +1,10 @@
-import Container from "@/layout/Container";
-import Gradient from "@/sections/home/Gradient";
-import Hero from "@/sections/home/Hero";
+
+
+import Container from "@/components/layout/Container";
+import Hero from "@/components/home/Hero";
 import { useEffect, useRef, Suspense, useState } from "react";
 import styles from "@/styles/modules/Home.module.css";
-import { Button } from "@/ui/Button";
+import { Button } from "@/components/common/Button";
 import {
   ChevronRight,
   Code2,
@@ -16,10 +17,10 @@ import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
 import Link from "next/link";
 import { cn, scrollTo } from "@/lib/utils";
-import { Card, CardContent } from "@/ui/Card";
+import { Card, CardContent } from "@/components/common/Card";
 import {
  
-} from "@/ui/Carousel";
+} from "@/components/common/Carousel";
 import VanillaTilt from "vanilla-tilt";
 import { motion } from "framer-motion";
 
@@ -159,7 +160,7 @@ export default function Home() {
   return (
     <Container>
       <div ref={refScrollContainer}>
-        <Gradient />
+        
 
      <Hero isScrolled={isScrolled} />
 

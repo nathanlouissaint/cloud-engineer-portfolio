@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "@/ui/Button";
+import { Button } from "@/components/common/Button";
 import { useState, useEffect } from "react";
 import { MailIcon } from "lucide-react";
 

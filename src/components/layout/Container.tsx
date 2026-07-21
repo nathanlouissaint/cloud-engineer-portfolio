@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn, scrollTo } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Footer from "@/layout/Footer";
-import Preloader from "@/layout/Preloader";
+import Footer from "@/components/layout/Footer";
+import Preloader from "@/components/layout/Preloader";
 import styles from "@/styles/modules/Container.module.css";
 
 type IconProps = {
