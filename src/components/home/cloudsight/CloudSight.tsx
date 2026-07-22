@@ -1,16 +1,30 @@
-import Problem from "./Problem";
+import ArchitectureSummary from "./ArchitectureSummary";
+import CaseStudyNav from "./CaseStudyNav";
 import EngineeringOverview from "./EngineeringOverview";
-import SystemArchitecture from "./SystemArchitecture";
+import Hero from "./Hero";
+import Problem from "./Problem";
+import RequestLifecycle from "./RequestLifecycle";
+import SoftwareArchitecture from "./SoftwareArchitecture";
 
 export default function CloudSight() {
   return (
     <section id="cloudsight" className="py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <Problem />
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 px-6 xl:grid-cols-[260px_1fr]">
+        <CaseStudyNav />
 
-        <EngineeringOverview />
+        <div>
+          <Hero />
 
-        <SystemArchitecture />
+          <Problem />
+
+          <EngineeringOverview />
+
+          <ArchitectureSummary />
+
+          <SoftwareArchitecture />
+
+          <RequestLifecycle />
+        </div>
       </div>
     </section>
   );

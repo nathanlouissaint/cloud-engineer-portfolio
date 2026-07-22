@@ -33,7 +33,8 @@ const technologies = [
 
 export default function EngineeringOverview() {
   return (
-    <Section
+     <Section
+      id="engineering-overview"
       eyebrow="Engineering Overview"
       title="Designed like a production cloud platform."
       description="CloudSight was built to demonstrate how a modern SaaS application is designed, deployed, and maintained. Instead of focusing only on dashboards, the project emphasizes architecture, scalability, authentication, infrastructure, and developer experience."

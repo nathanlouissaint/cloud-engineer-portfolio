@@ -2,7 +2,8 @@ import Section from "./Section";
 
 export default function Problem() {
   return (
-    <Section
+      <Section
+      id="problem"
       eyebrow="The Problem"
       title="Cloud cost visibility is more complicated than it should be."
       description="Engineering teams often rely on multiple AWS services, spreadsheets, dashboards, and manual reporting to understand cloud spending. That makes it difficult to answer simple questions about where money is going and what will happen next."
