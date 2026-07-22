@@ -41,9 +41,9 @@ export default function TechStack() {
           </h2>
 
           <p className="mt-8 text-xl leading-9 text-muted-foreground">
-            Every project starts with the same goal: build something that's
+            Every project starts with the same goal: build something that&apos;s
             easy to understand, easy to maintain, and ready to grow. I choose
-            technologies based on the problems I'm solving, not because they're
+            technologies based on the problems I&apos;m solving, not because they&apos;re
             popular.
           </p>
         </div>

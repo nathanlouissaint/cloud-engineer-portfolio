@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+
 import Container from "@/components/layout/Container";
 import About from "@/components/home/About";
-import Hero from "@/components/home/Hero";
-import FeaturedProject from "@/components/home/FeaturedProject";
-import TechStack from "@/components/home/TechStack";
+import CloudSight from "@/components/home/cloudsight/CloudSight";
 import Experience from "@/components/home/Experience";
+import FeaturedProject from "@/components/home/FeaturedProject";
+import Hero from "@/components/home/Hero";
+import TechStack from "@/components/home/TechStack";
+
 export default function Home() {
   const refScrollContainer = useRef<HTMLDivElement>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,15 +38,20 @@ export default function Home() {
   }, []);
 
   return (
-   <Container>
-  <div ref={refScrollContainer}>
-    <Hero isScrolled={isScrolled} />
+    <Container>
+      <div ref={refScrollContainer}>
+        <Hero isScrolled={isScrolled} />
 
-    <About />
-    <TechStack />
-    <FeaturedProject />
-    <Experience />
-  </div>
-</Container>
+        <About />
+
+        <TechStack />
+
+        <FeaturedProject />
+
+        <Experience />
+
+        <CloudSight />
+      </div>
+    </Container>
   );
 }

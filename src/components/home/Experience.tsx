@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import ExperienceTimeline from "./ExperienceTimeline";
 
 const journey = [
@@ -113,7 +114,16 @@ export default function Experience() {
   return (
     <section id="experience" className="py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="max-w-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.7,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="max-w-3xl"
+        >
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
             Building Software at CSTE
           </p>
@@ -134,18 +144,19 @@ export default function Experience() {
             These are some of the experiences that have shaped the way I work
             today.
           </p>
-        </div>
+        </motion.div>
 
         <div className="mt-24 space-y-2">
           {journey.map((step, index) => (
-           <ExperienceTimeline
-            key={step.title}
-            index={index + 1}
-            title={step.title}
-            summary={step.summary}
-            details={step.details}
-            tools={step.tools}
-            lesson={step.lesson}
+            <ExperienceTimeline
+              key={step.title}
+              index={index + 1}
+              delay={index * 0.12}
+              title={step.title}
+              summary={step.summary}
+              details={step.details}
+              tools={step.tools}
+              lesson={step.lesson}
             />
           ))}
         </div>
@@ -178,14 +189,14 @@ export default function Experience() {
 
           <div className="mt-16 border-t border-white/10 pt-12">
             <h3 className="text-3xl font-semibold">
-              What I've Learned
+              What I&apos;ve Learned
             </h3>
 
             <p className="mt-6 leading-8 text-muted-foreground">
               Working on production software has changed the way I build
               applications. I spend more time understanding existing systems,
               thinking through changes, testing my work, and making sure the
-              next developer can understand what I've built.
+              next developer can understand what I&apos;ve built.
             </p>
 
             <p className="mt-6 leading-8 text-muted-foreground">

@@ -7,7 +7,7 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
-            What I'm Building
+            What I&apos;m Building
           </p>
 
           <h2 className="mt-6 text-5xl font-bold tracking-tight">
@@ -23,9 +23,9 @@ export default function About() {
           </p>
 
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            My goal wasn't to recreate the AWS Console. I wanted to build
+            My goal wasn&apos;t to recreate the AWS Console. I wanted to build
             an application that helps engineering teams quickly understand
-            what's happening across their cloud environment without jumping
+            what&apos;s happening across their cloud environment without jumping
             between multiple services and dashboards.
           </p>
         </div>
