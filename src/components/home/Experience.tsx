@@ -1,84 +1,153 @@
 import { motion } from "framer-motion";
 import ExperienceTimeline from "./ExperienceTimeline";
 
-const journey = [
+interface JourneyStep {
+  title: string;
+  url?: string;
+  summary: string;
+  details: string[];
+  tools: string[];
+  lesson: string;
+}
+
+const journey: JourneyStep[] = [
   {
-    title: "Building Production Software",
+    title: "Building the CSTE Injury Surveillance Toolkit",
+    url: "https://injurytoolkit.cste.org",
     summary:
-      "Working on a production website changed the way I think about writing software.",
+      "I built a WordPress website that helps public health professionals find injury surveillance guidance, data sources, reports, and programming resources.",
     details: [
-      "When I started, I thought software engineering was mostly about building new features. I quickly learned that most of the work is understanding the code that's already there.",
-      "Before I change anything, I spend time reading the code, learning how different parts of the application work together, and figuring out where a change belongs. That helps me make updates that are easier to review, easier to test, and less likely to break something else.",
-      "Working in a shared codebase has taught me that the best solution is usually the simplest one.",
+      "I organized complex public health information into a toolkit for state, local, and territorial epidemiologists working in injury and overdose surveillance.",
+      "I built the responsive interface with WordPress and Divi. I created reusable layouts, navigation, and content sections that made the resources easier to explore.",
+      "I used PHP, JavaScript, HTML, and CSS to customize the website, publish content, fix issues, and support the live platform.",
     ],
-    tools: ["WordPress", "PHP", "JavaScript", "Git"],
+    tools: [
+      "WordPress",
+      "Divi",
+      "PHP",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
     lesson:
-      "Good software starts with understanding the system before trying to change it.",
+      "Complex information becomes useful when people can easily find and understand it.",
   },
   {
-    title: "Moving Data Between Systems",
+    title: "Improving Search and Tracking for CSTE Data Standardization",
+    url: "https://datastandardization.cste.org",
     summary:
-      "One project I worked on involved moving data from SQL into WordPress.",
+      "I improved the site's search setup and added Google Site Kit to understand how public health professionals find and use its resources.",
     details: [
-      "At first, it sounded like copying data from one place to another. It turned out to be much more than that.",
-      "Every record had to end up in the right place, every relationship had to stay connected, and every page had to work after the migration was finished.",
-      "After the data was moved, I checked the content, tested the pages, and made sure everything looked and worked the way it should before the changes went live.",
+      "The website supports epidemiologists, public health informatics teams, and data managers looking for guidance on standardizing public health data.",
+      "I improved the page titles, descriptions, headings, internal links, and mobile experience to help search engines understand and index the website.",
+      "I connected Google Site Kit to track search traffic, popular pages, visitor activity, and how users discover the site's resources.",
     ],
-    tools: ["SQL", "MySQL", "WordPress", "PHP"],
+    tools: [
+      "Technical SEO",
+      "Google Site Kit",
+      "GA4",
+      "Google Search Console",
+    ],
     lesson:
-      "Moving data safely takes planning, testing, and patience.",
+      "SEO helps the right people find the website, while tracking shows which resources they use.",
+  },
+  {
+    title: "Moving the CSTE Publications Library to the Cloud",
+    url: "https://www.cste.org/page/CSTEPublications",
+    summary:
+      "I helped move CSTE's publications library and SQL data from on-site servers to the cloud.",
+    details: [
+      "Before moving the system, I reviewed the database, publication records, document links, and the frontend table to understand how everything worked together.",
+      "I backed up the original database and moved the publication records into the cloud database while keeping the titles, categories, links, and other information connected.",
+      "After the move, I checked record totals, tested document links, fixed missing information, and made sure the frontend table displayed the correct data.",
+      "I tested the main user actions before the new system went live and kept the old system available in case we needed to roll back.",
+    ],
+    tools: [
+      "SQL",
+      "MySQL",
+      "Cloud Migration",
+      "Data Testing",
+      "PHP",
+      "JavaScript",
+      "HTML",
+      "CSS",
+    ],
+    lesson:
+      "Moving a system to the cloud requires careful backups, testing, and a clear recovery plan.",
   },
   {
     title: "Maintaining the Publication Library",
     summary:
-      "I spend a lot of time working on the publication library.",
+      "I maintain the publication library and fix problems that prevent people from accessing public health resources.",
     details: [
-      "That includes restoring missing files, fixing broken downloads, updating existing publications, and making sure people can find the information they need.",
-      "Sometimes the fix is simple. Other times I have to follow the data through different parts of the website to understand where something stopped working.",
-      "Every problem teaches me a little more about how large websites are put together.",
+      "I restore missing files, repair broken downloads, update publication records, and make sure users can find the correct documents.",
+      "When something breaks, I trace the record from the database to the page to find where the problem started.",
+      "I test every update before it goes live to make sure the record, link, and file all work correctly.",
     ],
-    tools: ["WordPress", "HTML", "CSS", "PHP"],
+    tools: [
+      "WordPress",
+      "SQL",
+      "PHP",
+      "HTML",
+      "CSS",
+    ],
     lesson:
-      "Small improvements can make a big difference for the people using the website every day.",
+      "A website is only useful when its information stays accurate and available.",
   },
   {
     title: "Making Content More Accessible",
     summary:
-      "Software should work for everyone.",
+      "I improve digital content so more people can use it across different devices and platforms.",
     details: [
-      "I've worked on improving accessibility by helping with subtitles for training videos, checking caption files, and making sure content works across different devices and platforms.",
-      "Accessibility isn't something I think about after a feature is finished. It's part of building the feature correctly.",
+      "I prepare and review subtitles for training videos and fix timing or formatting problems in caption files.",
+      "I test content across devices to catch accessibility and display problems before it is published.",
+      "I include accessibility in the work from the beginning instead of treating it as a final step.",
     ],
-    tools: ["Accessibility", "HTML", "CSS", "VTT", "Video"],
+    tools: [
+      "Accessibility",
+      "HTML",
+      "CSS",
+      "VTT",
+      "Video",
+    ],
     lesson:
-      "Building something that everyone can use is part of building good software.",
+      "Accessibility is a basic part of building a useful product.",
   },
   {
     title: "Debugging Production Issues",
     summary:
-      "Some of my favorite work is solving problems.",
+      "I find and fix issues that affect CSTE's live websites and their users.",
     details: [
-      "When an issue is reported, I don't start changing code right away.",
-      "I first try to reproduce the problem. Once I can see what's happening, I trace it through the application until I understand what's causing it. Only then do I start working on a fix.",
-      "After the fix is finished, I test it carefully before it goes into production.",
-      "That process has made me much more patient and much more confident when solving problems.",
+      "When someone reports a problem, I first recreate it so I can understand exactly what is happening.",
+      "I follow the issue through the page, code, content system, and database until I find the cause.",
+      "After making the fix, I test the affected feature and related pages before releasing the update.",
     ],
-    tools: ["JavaScript", "Browser DevTools", "Git", "WordPress"],
+    tools: [
+      "JavaScript",
+      "Browser DevTools",
+      "Git",
+      "WordPress",
+    ],
     lesson:
-      "Understanding the problem is usually the hardest part of fixing it.",
+      "The best fixes come from finding the real cause instead of guessing.",
   },
   {
-    title: "Working With People",
+    title: "Working Across Teams",
     summary:
-      "Building software is a team effort.",
+      "I work with technical and nontechnical teammates to turn requests into working website updates.",
     details: [
-      "I work with teammates to understand requests, talk through different approaches, test changes together, and make sure updates solve the right problem.",
-      "Some of the best ideas come from simple conversations. Asking questions early usually saves time later.",
-      "Working with other developers has shown me that communication is just as important as writing good code.",
+      "I ask questions early to understand the problem, the users affected, and what the finished update needs to do.",
+      "I explain technical limits and progress in clear language so everyone understands what is happening.",
+      "I work with teammates to test changes and confirm that each update solves the original problem.",
     ],
-    tools: ["GitHub", "WordPress", "Teams", "Agile"],
+    tools: [
+      "GitHub",
+      "WordPress",
+      "Microsoft Teams",
+      "Agile",
+    ],
     lesson:
-      "Good software is built by people who communicate well.",
+      "Clear communication saves time and leads to better software.",
   },
 ];
 
@@ -115,9 +184,18 @@ export default function Experience() {
     <section id="experience" className="py-32">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          initial={{
+            opacity: 0,
+            y: 32,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
           transition={{
             duration: 0.7,
             ease: [0.22, 1, 0.36, 1],
@@ -129,20 +207,20 @@ export default function Experience() {
           </p>
 
           <h2 className="mt-6 text-5xl font-bold tracking-tight">
-            Learning how production software is built, maintained, and improved.
+            Building and supporting software used in public health.
           </h2>
 
           <p className="mt-8 text-xl leading-9 text-muted-foreground">
             As a Full-Stack Developer at the Council of State and Territorial
-            Epidemiologists (CSTE), I help build and maintain production web
-            applications that support public health professionals across the
-            United States.
+            Epidemiologists, I build and maintain websites used by public health
+            professionals across the United States.
           </p>
 
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Every project has taught me something new about building software.
-            These are some of the experiences that have shaped the way I work
-            today.
+            My work includes building websites, moving data to the cloud,
+            connecting databases to frontend pages, improving search,
+            measuring website activity, improving accessibility, and fixing
+            issues on live systems.
           </p>
         </motion.div>
 
@@ -153,6 +231,7 @@ export default function Experience() {
               index={index + 1}
               delay={index * 0.12}
               title={step.title}
+              url={step.url}
               summary={step.summary}
               details={step.details}
               tools={step.tools}
@@ -161,50 +240,7 @@ export default function Experience() {
           ))}
         </div>
 
-        <div className="mt-32 rounded-3xl border border-white/10 bg-white/[0.03] p-10 backdrop-blur">
-          <h3 className="text-3xl font-semibold">
-            Technologies I Work With
-          </h3>
-
-          <div className="mt-12 grid gap-10 md:grid-cols-2">
-            {Object.entries(technologies).map(([category, items]) => (
-              <div key={category}>
-                <h4 className="text-lg font-semibold">
-                  {category}
-                </h4>
-
-                <div className="mt-5 flex flex-wrap gap-3">
-                  {items.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 px-4 py-2 text-sm"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 border-t border-white/10 pt-12">
-            <h3 className="text-3xl font-semibold">
-              What I&apos;ve Learned
-            </h3>
-
-            <p className="mt-6 leading-8 text-muted-foreground">
-              Working on production software has changed the way I build
-              applications. I spend more time understanding existing systems,
-              thinking through changes, testing my work, and making sure the
-              next developer can understand what I&apos;ve built.
-            </p>
-
-            <p className="mt-6 leading-8 text-muted-foreground">
-              Those lessons continue to shape every project I work on, including
-              CloudSight.
-            </p>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
