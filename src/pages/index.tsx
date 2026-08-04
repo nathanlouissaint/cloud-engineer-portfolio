@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Container from "@/components/layout/Container";
 import About from "@/components/home/About";
 import CloudSight from "@/components/home/cloudsight/CloudSight";
+import Ecommerce from "@/components/home/ecommerce/Ecommerce";
 import Experience from "@/components/home/Experience";
 import FeaturedProject from "@/components/home/FeaturedProject";
 import Hero from "@/components/home/Hero";
@@ -42,15 +43,17 @@ export default function Home() {
       <div ref={refScrollContainer}>
         <Hero isScrolled={isScrolled} />
 
-        <About />
-
         <TechStack />
-
-        <FeaturedProject />
 
         <Experience />
 
+        <About />
+
         <CloudSight />
+
+        <Ecommerce />
+
+        <FeaturedProject />
       </div>
     </Container>
   );
