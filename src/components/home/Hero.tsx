@@ -43,9 +43,9 @@ export default function Hero({ isScrolled = false }: HeroProps) {
           </h1>
 
           <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground">
-           I build software that solves infrastructure problems. From full-stack web
-           applications to cloud architecture, I enjoy turning complex systems into
-           products that are reliable, scalable, and easy to use.
+           I build full-stack applications and cloud architecture that solve real problems. 
+           I enjoy taking complicated ideas and turning them into reliable software that people can actually use.
+
            </p>
 
           <div className="mt-10 flex flex-wrap gap-4">

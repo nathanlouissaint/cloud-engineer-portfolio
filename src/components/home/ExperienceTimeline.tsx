@@ -1,4 +1,5 @@
 import {
+  ExternalLink,
   Lightbulb,
   Wrench,
 } from "lucide-react";
@@ -8,6 +9,7 @@ interface TimelineItemProps {
   index: number;
   delay: number;
   title: string;
+  url?: string;
   summary: string;
   details: string[];
   tools: string[];
@@ -18,6 +20,7 @@ export default function ExperienceTimeline({
   index,
   delay,
   title,
+  url,
   summary,
   details,
   tools,
@@ -96,6 +99,23 @@ export default function ExperienceTimeline({
             ))}
           </div>
         </div>
+
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${title}`}
+            className="mt-10 inline-flex items-center gap-3 rounded-full border border-primary/40 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:bg-primary/20 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            View Project
+
+            <ExternalLink
+              aria-hidden="true"
+              className="h-4 w-4"
+            />
+          </a>
+        )}
 
         <div className="mt-10 max-w-xl rounded-2xl border border-primary/20 bg-primary/5 p-6 backdrop-blur transition-all duration-300 group-hover:-translate-y-1 group-hover:border-primary/30 group-hover:bg-primary/10">
           <div className="flex items-center gap-2">
